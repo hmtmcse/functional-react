@@ -6,3 +6,8 @@ npx create-react-app bismillah --template typescript
 cd bismillah
 npm start
 ```
+
+* Create Vite App
+```bash
+pnpm create vite my-vite-app --template react-ts
+```
