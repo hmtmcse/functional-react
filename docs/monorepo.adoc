@@ -1,22 +1,24 @@
 ```bash
-mkdir my-saas
-cd my-saas
-
 npm install -g pnpm
+
+mkdir my-monorepo
+cd my-monorepo
 pnpm init
 
-mkdir -p apps/web apps/admin
+# create pnpm-workspace.yaml
 
-cd apps/web
-pnpm create vite@latest . -- --template react-ts
 
-# Admin App
-cd ../admin
-pnpm create vite@latest . -- --template react-ts
+mkdir apps
+cd apps
+pnpm create vite web --template react-ts
 
-cd ../../
-
-mkdir -p packages/ui
-cd packages/ui
+cd ..
+mkdir packages
+cd packages
+mkdir ui
+cd ui
 pnpm init
+mkdir src
+
+pnpm add -D vite-tsconfig-paths
 ```
