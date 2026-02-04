@@ -20,5 +20,5 @@ cd ui
 pnpm init
 mkdir src
 
-pnpm add -D vite-tsconfig-paths
+pnpm add -D vite-tsconfig-paths --filter web
 ```
