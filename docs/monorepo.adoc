@@ -1,0 +1,22 @@
+```bash
+mkdir my-saas
+cd my-saas
+
+npm install -g pnpm
+pnpm init
+
+mkdir -p apps/web apps/admin
+
+cd apps/web
+pnpm create vite@latest . -- --template react-ts
+
+# Admin App
+cd ../admin
+pnpm create vite@latest . -- --template react-ts
+
+cd ../../
+
+mkdir -p packages/ui
+cd packages/ui
+pnpm init
+```
