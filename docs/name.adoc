@@ -1,0 +1,79 @@
+[cols="1,1,1,1", options="header"]
+|===
+| Type | Example Component / Hook Name | File Name | Directory Name
+
+| React Component (short)
+| Button
+| Button.tsx
+| Button/
+
+| React Component (long)
+| UserProfileCard
+| UserProfileCard.tsx
+| UserProfileCard/
+
+| Component Folder with multiple files
+| UserProfileCard
+| index.tsx (re-exports UserProfileCard.tsx)
+| UserProfileCard/
+
+| Custom Hook (short)
+| useAuth
+| useAuth.ts
+| hooks/
+
+| Custom Hook (long)
+| useFetchUserProfile
+| useFetchUserProfile.ts
+| hooks/
+
+| Utility / Helper (short)
+| formatDate
+| formatDate.ts
+| utils/
+
+| Utility / Helper (long)
+| calculateTotalPrice
+| calculateTotalPrice.ts
+| utils/
+
+| Types / Interface (short)
+| ButtonProps
+| types.ts
+| types/
+
+| Types / Interface (long)
+| UserProfileCardProps
+| types.ts
+| types/
+
+| Asset / Image (short)
+| logo
+| logo.svg
+| assets/
+
+| Asset / Image (long)
+| userProfileAvatar
+| user-profile-avatar.png
+| assets/
+
+| CSS / Module (short)
+| button
+| button.module.css
+| styles/
+
+| CSS / Module (long)
+| userProfileCard
+| user-profile-card.module.css
+| styles/
+
+| Test file (short)
+| Button
+| Button.test.tsx
+| Button/
+
+| Test file (long)
+| UserProfileCard
+| UserProfileCard.test.tsx
+| UserProfileCard/
+|===
