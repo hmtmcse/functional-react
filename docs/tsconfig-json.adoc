@@ -1,0 +1,114 @@
+[cols="1,1,1,2", options="header"]
+|===
+| Key | Type | Mandatory | Explanation / Example
+
+| extends
+| string
+| Optional but highly recommended
+| Extends another tsconfig file. Often used to share base compiler options across multiple apps/packages. Example: "extends": "../../tsconfig.base.json"
+
+| compilerOptions
+| object
+| Mandatory
+| Core TypeScript compiler options. Everything below is part of this object.
+
+| target
+| string
+| Recommended
+| JavaScript version output. "ES2022" means modern JS syntax like class fields and top-level await.
+
+| useDefineForClassFields
+| boolean
+| Optional, recommended for React 18+
+| Makes class fields behave closer to the ECMAScript spec. "true" is recommended to avoid subtle bugs in classes.
+
+| lib
+| array
+| Recommended
+| Lists built-in JS/DOM APIs available. Example: ["ES2022","DOM","DOM.Iterable"] allows modern JS + browser APIs.
+
+| module
+| string
+| Mandatory for Vite / ESM apps
+| Module system TypeScript outputs. "ESNext" for modern bundlers (Vite/Rollup).
+
+| moduleResolution
+| string
+| Recommended
+| How TypeScript resolves modules. "bundler" works best with Vite for ESM imports.
+
+| allowImportingTsExtensions
+| boolean
+| Optional
+| Lets you import .ts / .tsx files with extensions (rarely needed).
+
+| verbatimModuleSyntax
+| boolean
+| Optional, Vite-specific
+| Preserves import/export syntax in emitted JS. Useful for bundlers that handle ESM directly.
+
+| moduleDetection
+| string
+| Optional
+| "force" ensures TypeScript treats all files as modules, avoiding accidental global scripts.
+
+| noEmit
+| boolean
+| Recommended for React apps
+| Do not output JS. Vite handles bundling.
+
+| jsx
+| string
+| Mandatory for React
+| "react-jsx" uses the new React 17+ JSX transform, avoids importing React in every file.
+
+| types
+| array
+| Optional but recommended
+| Adds type definitions globally. "vite/client" gives Vite-specific types for import.meta.env.
+
+| skipLibCheck
+| boolean
+| Optional, recommended
+| Skips type checking of node_modules. Speeds up compilation, avoids unnecessary errors.
+
+| strict
+| boolean
+| Recommended
+| Enables all strict type checking options. Helps catch bugs early.
+
+| noUnusedLocals
+| boolean
+| Optional, recommended
+| Warns about unused local variables.
+
+| noUnusedParameters
+| boolean
+| Optional, recommended
+| Warns about unused function parameters.
+
+| erasableSyntaxOnly
+| boolean
+| Optional, advanced
+| Ensures only erasable syntax is removed during transformations.
+
+| noFallthroughCasesInSwitch
+| boolean
+| Optional, recommended
+| Detects missing break in switch statements.
+
+| noUncheckedSideEffectImports
+| boolean
+| Optional
+| Prevents importing modules with unknown side effects without explicit marking.
+
+| include
+| array
+| Mandatory
+| Files/folders to compile. Usually your source code: "src"
+
+| exclude
+| array
+| Optional but recommended
+| Files/folders to skip: "node_modules" & "dist" are common.
+|===

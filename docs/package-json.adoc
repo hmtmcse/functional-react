@@ -1,0 +1,184 @@
+== package.json Keywords Reference
+
+[cols="1,2,4,4",options="header"]
+|===
+| Keyword
+| Type
+| What it does
+| Example
+
+| name
+| string
+| The package name. Must be unique in npm registry.
+| "name": "@my-saas/web"
+
+| version
+| string
+| Package version following semver.
+| "version": "1.0.0"
+
+| private
+| boolean
+| Prevents publishing to npm when true.
+| "private": true
+
+| description
+| string
+| Short description of the package.
+| "description": "SaaS admin dashboard"
+
+| keywords
+| array
+| Helps discoverability on npm.
+| "keywords": ["saas", "react", "dashboard"]
+
+| license
+| string
+| License identifier.
+| "license": "MIT"
+
+| author
+| string or object
+| Package author info.
+| "author": "Touhid Mia <touhid@banglafighter.co>"
+
+| homepage
+| string
+| Project homepage URL.
+| "homepage": "https://banglafighter.com"
+
+| repository
+| object
+| Source code repository info.
+| "repository": { "type": "git", "url": "git+https://github.com/org/repo.git" }
+
+| bugs
+| object
+| Issue tracker info.
+| "bugs": { "url": "https://github.com/org/repo/issues" }
+
+| type
+| string
+| Module system used (module or commonjs).
+| "type": "module"
+
+| main
+| string
+| Entry point for CommonJS.
+| "main": "dist/index.cjs"
+
+| module
+| string
+| Entry point for ES modules (bundlers).
+| "module": "dist/index.js"
+
+| types
+| string
+| TypeScript declaration file entry.
+| "types": "dist/index.d.ts"
+
+| exports
+| object
+| Controls what files can be imported.
+| "exports": { ".": "./dist/index.js" }
+
+| files
+| array
+| Files included when publishing.
+| "files": ["dist"]
+
+| scripts
+| object
+| Command shortcuts.
+| "scripts": { "dev": "vite", "build": "vite build" }
+
+| dependencies
+| object
+| Runtime dependencies required in production.
+| "dependencies": { "react": "^19.0.0" }
+
+| devDependencies
+| object
+| Build, test, and tooling dependencies.
+| "devDependencies": { "typescript": "^5.4.0" }
+
+| peerDependencies
+| object
+| Required dependencies provided by the consumer.
+| "peerDependencies": { "react": ">=18" }
+
+| peerDependenciesMeta
+| object
+| Marks peer deps as optional.
+| "peerDependenciesMeta": { "react": { "optional": true } }
+
+| optionalDependencies
+| object
+| Dependencies that may fail to install.
+| "optionalDependencies": { "fsevents": "^2.3.3" }
+
+| bundledDependencies
+| array
+| Dependencies bundled inside the package.
+| "bundledDependencies": ["some-lib"]
+
+| engines
+| object
+| Supported Node / package manager versions.
+| "engines": { "node": ">=18" }
+
+| packageManager
+| string
+| Locks the package manager and version.
+| "packageManager": "pnpm@9.0.0"
+
+| workspaces
+| array or object
+| Monorepo package paths.
+| "workspaces": ["apps/*", "packages/*"]
+
+| bin
+| string or object
+| CLI command mapping.
+| "bin": { "mycli": "dist/cli.js" }
+
+| config
+| object
+| Runtime configuration for scripts.
+| "config": { "port": "3000" }
+
+| sideEffects
+| boolean or array
+| Helps tree-shaking.
+| "sideEffects": false
+
+| publishConfig
+| object
+| Publishing behavior overrides.
+| "publishConfig": { "access": "public" }
+
+| funding
+| string or object
+| Funding information.
+| "funding": "https://github.com/sponsors/org"
+
+| os
+| array
+| Supported operating systems.
+| "os": ["linux", "darwin"]
+
+| cpu
+| array
+| Supported CPU architectures.
+| "cpu": ["x64", "arm64"]
+
+| overrides
+| object
+| Force dependency versions (pnpm/npm).
+| "overrides": { "react": "19.0.0" }
+|===
+
+{blank} +
+
+== What is CommonJS?
+CommonJS (CJS) is an older JavaScript module system.
