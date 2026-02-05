@@ -1,0 +1,12 @@
+{
+  "name": "@bfe/react-route-v1",
+  "private": true,
+  "packageManager": "pnpm@9",
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
