@@ -1,0 +1,76 @@
+== Hooks Table (Complete Reference)
+
+[cols="1,2,2,2",options="header"]
+|===
+| Hook | Purpose | When to Use | Example
+
+| useState
+| Local component state
+| Simple state (counter, input, toggle)
+| `const [count, setCount] = useState(0)`
+
+| useEffect
+| Side effects
+| API calls, subscriptions, DOM sync
+| `useEffect(() => { fetchData() }, [])`
+
+| useContext
+| Share state globally
+| Theme, auth, language
+| `const value = useContext(MyContext)`
+
+| useRef
+| Mutable value / DOM access
+| Focus input, store previous value
+| `const ref = useRef(null)`
+
+| useReducer
+| Complex state logic
+| Multiple related state updates
+| `const [state, dispatch] = useReducer(reducer, init)`
+
+| useMemo
+| Memoize values
+| Expensive calculations
+| `useMemo(() => calc(a), [a])`
+
+| useCallback
+| Memoize functions
+| Stable callbacks for children
+| `useCallback(fn, [deps])`
+
+| useLayoutEffect
+| Sync DOM effect
+| Measure DOM before paint
+| `useLayoutEffect(() => {}, [])`
+
+| useImperativeHandle
+| Control exposed ref API
+| Custom ref methods
+| `useImperativeHandle(ref, () => ({ focus }))`
+
+| useId
+| Stable unique IDs
+| Accessibility, SSR-safe ids
+| `const id = useId()`
+
+| useTransition
+| Non-blocking updates
+| Large UI updates
+| `startTransition(() => setState())`
+
+| useDeferredValue
+| Defer updates
+| Slow lists, search input
+| `const d = useDeferredValue(value)`
+
+| useSyncExternalStore
+| External store sync
+| Redux, Zustand internals
+| `useSyncExternalStore(sub, get)`
+
+| useInsertionEffect
+| Inject styles early
+| CSS-in-JS libraries
+| `useInsertionEffect(() => {}, [])`
+|===

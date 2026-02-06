@@ -1,6 +1,7 @@
 import {createBrowserRouter} from "react-router-dom"
 import UserProfileForm from "./form-example.tsx";
 import UsersPage from "./user/UsersPage.tsx";
+import ExpLanding from "./exp/exp-landing.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -14,5 +15,9 @@ export const router = createBrowserRouter([
     {
         path: "/crud1",
         element: (<UsersPage/>)
+    },
+    {
+        path: "/exp-landing",
+        element: (<ExpLanding/>)
     },
 ])
