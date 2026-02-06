@@ -1,0 +1,20 @@
+{
+  "name": "@mfront/app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite-tsconfig-paths": "^6.0.5",
+    "vite": "^7.2.4",
+    "@types/react-dom": "^19.2.3",
+    "@types/react": "^19.2.5"
+  }
+}
