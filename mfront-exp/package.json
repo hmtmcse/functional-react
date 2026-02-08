@@ -1,9 +1,0 @@
-{
-  "name": "mfront-exp",
-  "private": true,
-  "packageManager": "pnpm@9",
-  "scripts": {
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build"
-  }
-}
