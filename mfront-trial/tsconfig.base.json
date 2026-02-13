@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "mfront": [
+        "dependencies/ui/mfront/code"
+      ],
+      "@mfront/*": [
+        "dependencies/ui/*/code"
+      ]
+    }
+  }
+}

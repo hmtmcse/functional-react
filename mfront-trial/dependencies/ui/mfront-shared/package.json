@@ -1,0 +1,6 @@
+{
+  "name": "@mfront/shared",
+  "version": "0.0.1",
+  "main": "code/index.ts",
+  "types": "code/index.ts"
+}
