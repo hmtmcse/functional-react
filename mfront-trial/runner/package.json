@@ -6,7 +6,6 @@
     "dev": "vite"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.1",
     "vite-tsconfig-paths": "^6.0.5",
     "vite": "^7.2.4"
   }
