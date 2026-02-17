@@ -3,10 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "mfront": [
-        "dependencies/ui/mfront/code"
+        "dependencies/ui/mfront"
       ],
       "@mfront/*": [
-        "dependencies/ui/*/code"
+        "dependencies/ui/*"
       ]
     }
   }
