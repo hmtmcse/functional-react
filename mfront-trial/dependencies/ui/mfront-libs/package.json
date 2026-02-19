@@ -2,5 +2,8 @@
   "name": "@mfront/libs",
   "version": "0.0.1",
   "main": "code/index.ts",
-  "types": "code/index.ts"
+  "types": "code/index.ts",
+  "dependencies": {
+    "react-router-dom": "^7.13.0"
+  }
 }
