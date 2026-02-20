@@ -1,25 +1,23 @@
-import {RouteConfig} from "mfront";
+import {RouteConfig, type Layout} from "mfront";
+import PublicLayout from "../layout/public-layout.tsx";
+import DefaultLayout from "../layout/default-layout.tsx";
+import PrivateLayout from "../layout/private-layout.tsx";
 
 
 export default class AppRouteConfig extends RouteConfig {
-    setPublicLayout() {
-        throw new Error("Method not implemented.");
+    setPublicLayout(): Layout {
+        return <PublicLayout/>
     }
 
-    setPrivateLayout() {
-        throw new Error("Method not implemented.");
+    setPrivateLayout(): Layout {
+        return <PrivateLayout/>
     }
 
-    setDefaultLayout() {
-        throw new Error("Method not implemented.");
-    }
-
-    setOtherLayout(): void {
-        throw new Error("Method not implemented.");
+    setDefaultLayout(): Layout {
+        return <DefaultLayout/>
     }
 
     registerRoute(routerConfig: RouteConfig): void {
         throw new Error("Method not implemented.");
     }
-
 }

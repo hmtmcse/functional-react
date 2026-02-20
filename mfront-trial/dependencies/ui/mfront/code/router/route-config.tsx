@@ -1,5 +1,6 @@
 import RoutePageData from "./route-page-data";
 import RouteData from "./route-data";
+import {Layout} from "./../data/mtypes";
 
 const RouteConfigName = {
     privateLayout: "private",
@@ -16,13 +17,13 @@ function getMappingForReactRouter(routers: Map<string, RouteData>) {
 export default abstract class RouteConfig {
     private pageAndLayout: Map<string, RouteData> = new Map<string, RouteData>()
 
-    abstract setPublicLayout(): any
+    abstract setPublicLayout(): Layout
 
-    abstract setPrivateLayout(): any
+    abstract setPrivateLayout(): Layout
 
-    abstract setDefaultLayout(): any
+    abstract setDefaultLayout(): Layout
 
-    abstract setOtherLayout(): void
+    setOtherLayout(): void {}
 
     abstract registerRoute(routerConfig: RouteConfig): void
 
