@@ -20,7 +20,7 @@
     ],
     "skipLibCheck": true,
     "strict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true

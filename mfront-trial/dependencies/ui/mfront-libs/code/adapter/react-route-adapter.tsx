@@ -8,6 +8,7 @@ import {
   useLoaderData,
   useRouteError,
   redirect,
+  useSearchParams, useMatches,
 } from "react-router-dom"
 
 export function createReactRoute(routes: any, options?: any) {
@@ -26,6 +27,8 @@ export const routerNavLink = NavLink
 // Hooks
 export const routerUseNavigation = useNavigation
 export const routerUseParams = useParams
+export const routerUseSearchParams = useSearchParams
+export const routerUseMatches = useMatches
 export const routerUseLoaderData = useLoaderData
 export const routerUseRouteError = useRouteError
 

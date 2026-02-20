@@ -1,0 +1,3 @@
+
+* get url parameter -> useParams()
+* get query params -> useSearchParams
