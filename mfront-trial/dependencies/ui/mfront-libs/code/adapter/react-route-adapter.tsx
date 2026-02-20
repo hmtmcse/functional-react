@@ -20,7 +20,7 @@ export function MountRoute({router}: { router: any }) {
 }
 
 // Core
-export const routerOutlet = Outlet
+export const RouterOutlet = Outlet
 export const routerNavLink = NavLink
 
 // Hooks
