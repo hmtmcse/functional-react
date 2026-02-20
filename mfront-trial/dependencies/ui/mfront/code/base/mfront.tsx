@@ -3,7 +3,9 @@ import {createApp} from "./../core/create-app";
 import MFrontPageManager from "./../base/mfront-page-manager";
 
 export const MFront = {
-    boot({viewHolder}: BootProps) {
-        return createApp(<MFrontPageManager/>, viewHolder)
+    boot({viewHolder, config}: BootProps) {
+        return createApp(<MFrontPageManager
+            config={config}
+        />, viewHolder)
     }
 }

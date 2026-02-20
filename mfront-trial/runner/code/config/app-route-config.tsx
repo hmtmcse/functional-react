@@ -2,6 +2,7 @@ import {RouteConfig, type Layout} from "mfront";
 import PublicLayout from "../layout/public-layout.tsx";
 import DefaultLayout from "../layout/default-layout.tsx";
 import PrivateLayout from "../layout/private-layout.tsx";
+import Bismillah from "../feature/example/bismillah.tsx";
 
 
 export default class AppRouteConfig extends RouteConfig {
@@ -18,6 +19,9 @@ export default class AppRouteConfig extends RouteConfig {
     }
 
     registerRoute(routerConfig: RouteConfig): void {
-        throw new Error("Method not implemented.");
+        routerConfig.addPublicRoute({
+            url: "/dashboard",
+            content: <Bismillah/>
+        })
     }
 }
