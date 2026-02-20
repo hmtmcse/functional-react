@@ -13,7 +13,6 @@ function getMappingForReactRouter(routers: Map<string, RouteData>) {
     let mappings: any = []
     routers.forEach((data, layoutName) => {
         let routeMap: any = {
-             path: "/",
             element: data.layout,
             children: []
         }

@@ -14,8 +14,9 @@ export function createReactRoute(routes: any, options?: any) {
   return createBrowserRouter(routes, options)
 }
 
-export function MountRoute(router: any) {
-  return <ReactRouterProvider router={router} />
+
+export function MountRoute({router}: { router: any }) {
+  return <ReactRouterProvider router={router}/>
 }
 
 // Core
