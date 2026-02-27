@@ -6,6 +6,7 @@ import {Layout} from "./data/mtypes"
 import type {MConfig} from "./data/mconfig"
 import {reactLazy as loadPage} from "@mfront/mfront-libs";
 import RoutePageData, { UIFunction } from "./router/route-page-data";
+import MRegistry from "./data/mregistry";
 
 
 export type {
@@ -20,5 +21,6 @@ export {
     MConfig,
     PageSlot,
     useRequest,
-    loadPage
+    loadPage,
+    MRegistry
 }
