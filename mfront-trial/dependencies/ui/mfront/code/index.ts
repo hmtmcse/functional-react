@@ -1,12 +1,17 @@
 import {MFront} from "./base/mfront";
 import RouteConfig from "./router/route-config";
 import {PageSlot} from "./router/route-common"
-import {useRouteStore} from "./router/route-store"
+import {useRequest} from "./router/use-request"
 import {Layout} from "./data/mtypes"
 import type {MConfig} from "./data/mconfig"
+import {reactLazy as loadPage} from "@mfront/mfront-libs";
+import RoutePageData, { UIFunction } from "./router/route-page-data";
+
 
 export type {
-    Layout
+    Layout,
+    UIFunction,
+    RoutePageData
 }
 
 export {
@@ -14,5 +19,6 @@ export {
     RouteConfig,
     MConfig,
     PageSlot,
-    useRouteStore
+    useRequest,
+    loadPage
 }

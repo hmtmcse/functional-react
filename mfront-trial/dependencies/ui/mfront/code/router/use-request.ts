@@ -1,6 +1,6 @@
 import {routerUseMatches, routerUseParams, routerUseSearchParams} from "@mfront/mfront-libs";
 
-export function useRouteStore() {
+export function useRequest() {
     const params = routerUseParams();
     const [searchParams] = routerUseSearchParams();
     const matches = routerUseMatches();

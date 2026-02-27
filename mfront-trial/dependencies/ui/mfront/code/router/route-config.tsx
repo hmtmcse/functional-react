@@ -17,16 +17,17 @@ function getMappingForReactRouter(routers: Map<string, RouteData>) {
             children: []
         }
         for (const page of data.pages ?? []) {
+            const FunctionToElement = page.content
+            let element = <FunctionToElement/>
             routeMap.children.push({
                 path: page.url,
-                element: page.content
+                element: element
             })
         }
         if (data.pages?.length) {
             mappings.push(routeMap)
         }
     })
-    console.log(mappings)
     return createReactRoute(mappings)
 }
 

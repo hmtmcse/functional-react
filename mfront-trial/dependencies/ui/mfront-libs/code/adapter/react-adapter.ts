@@ -14,5 +14,10 @@ export const reactUseLayoutEffect = React.useLayoutEffect
 // Core
 export const reactCreateElement = React.createElement
 export const reactFragment = React.Fragment
-export const reactSuspense = React.Suspense
+export const ReactSuspense = React.Suspense
 export const reactCreateRoot = ReactDOM.createRoot
+
+export const reactLazy = React.lazy
+
+export type reactNode = React.ReactNode
+export type reactComponentType<P = any> = React.ComponentType<P>

@@ -3,3 +3,38 @@
 * xxx-page.tsx : Must add page extension if it direct access from url
 * xxx-dialog.tsx : If it open by dialog
 * xxx-view.tsx : Not directly open but common view which will share by others
+
+
+== Need to address
+* state
+** setState
+* props
+** defaultProps
+* globalContext
+** globalConfig
+* pageTitle
+* didMount
+* didUpdate
+* redirect
+* showFlash
+* form
+** fieldDefinition
+** inputField
+
+
+== UI HTML Component
+* Button
+* Card
+** CardBody
+** Header Footer - Explore if needed or not
+* Row
+* Column
+* Accordion
+* Form
+* Pagination
+* FlashBox
+* Container
+* Input
+** InputFiled
+** Select
+** Label
