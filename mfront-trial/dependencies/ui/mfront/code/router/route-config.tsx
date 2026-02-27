@@ -17,11 +17,10 @@ function getMappingForReactRouter(routers: Map<string, RouteData>) {
             children: []
         }
         for (const page of data.pages ?? []) {
-            const FunctionToElement = page.content
-            let element = <FunctionToElement/>
+            const FunctionToElement: any = page.content
             routeMap.children.push({
                 path: page.url,
-                element: element
+                element: <FunctionToElement/>
             })
         }
         if (data.pages?.length) {
