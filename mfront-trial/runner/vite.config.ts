@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig(({mode}) => {
     // 1️⃣ Load env from monorepo env folder
-    const envFolder = path.resolve(__dirname, '../../env') // adjust based on your folder structure
+    const envFolder = path.resolve(__dirname, '../env') // adjust based on your folder structure
     const env = loadEnv(mode, envFolder, '') // third param '' allows all vars without VITE_ prefix
 
     // 2️⃣ Convert env to define globals
