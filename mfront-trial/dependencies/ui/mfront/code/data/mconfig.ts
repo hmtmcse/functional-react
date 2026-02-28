@@ -14,3 +14,5 @@ export interface MConfig {
     apiBaseUrl?: string
     assetsBaseUrl?: string
 }
+
+export class MConfigDefault implements MConfig {}

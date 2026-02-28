@@ -1,0 +1,333 @@
+= mfront createStore Documentation
+:toc:
+:toclevels: 3
+:icons: font
+
+== Overview
+
+`createStore` is the official state management API of *mfront*.
+
+It provides:
+
+* React hook-based state usage
+* Global state access outside React
+* Optional persistence
+* Optional devtools integration
+* Fully hidden state engine (Zustand internally, but abstracted)
+
+The API is engine-agnostic and future-proof.
+
+---
+
+== Basic Usage
+
+[source,typescript]
+----
+import { createStore } from "mfront"
+
+type CounterState = {
+  count: number
+  increment: () => void
+  decrement: () => void
+  reset: () => void
+}
+
+export const useCounterStore = createStore<CounterState>((set) => ({
+  count: 0,
+
+  increment: () => set((s) => ({ count: s.count + 1 })),
+  decrement: () => set((s) => ({ count: s.count - 1 })),
+  reset: () => set({ count: 0 }),
+}))
+----
+
+---
+
+== Using Inside React Component
+
+[source,tsx]
+----
+function Counter() {
+  const count = useCounterStore((s) => s.count)
+  const increment = useCounterStore((s) => s.increment)
+  const decrement = useCounterStore((s) => s.decrement)
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </div>
+  )
+}
+----
+
+Behavior:
+
+* Component re-renders only when selected state changes
+* Selector ensures performance optimization
+
+---
+
+== API Reference
+
+=== createStore
+
+[source,typescript]
+----
+createStore<T>(
+  initializer: (set, get) => T,
+  options?: StoreOptions
+): MStore<T>
+----
+
+=== Parameters
+
+|===
+| Name | Type | Description
+
+| initializer
+| (set, get) => T
+| Defines initial state and actions
+
+| options
+| StoreOptions
+| Optional configuration
+|===
+
+---
+
+=== StoreOptions
+
+[source,typescript]
+----
+type StoreOptions = {
+  devtools?: boolean
+  persist?: {
+    name: string
+  }
+}
+----
+
+---
+
+== Returned Store API
+
+[source,typescript]
+----
+type MStore<T> = {
+  use: <U>(selector: (state: T) => U) => U
+  get: () => T
+  set: (partial: Partial<T> | ((state: T) => Partial<T>)) => void
+  subscribe: (listener: (state: T) => void) => () => void
+}
+----
+
+---
+
+== Store Methods Explained
+
+=== use(selector)
+
+React hook for subscribing to store state.
+
+[source,typescript]
+----
+const count = useCounterStore((s) => s.count)
+----
+
+* Causes component re-render when selected state changes
+* Must be used inside React component
+
+---
+
+=== get()
+
+Get current state outside React.
+
+[source,typescript]
+----
+const current = useCounterStore.get()
+console.log(current.count)
+----
+
+Useful for:
+
+* Utility functions
+* Services
+* Debugging
+* Background logic
+
+---
+
+=== set()
+
+Update state outside initializer.
+
+[source,typescript]
+----
+useCounterStore.set({ count: 10 })
+----
+
+Functional update:
+
+[source,typescript]
+----
+useCounterStore.set((s) => ({ count: s.count + 5 }))
+----
+
+---
+
+=== subscribe()
+
+Listen to state changes outside React.
+
+[source,typescript]
+----
+const unsubscribe = useCounterStore.subscribe((state) => {
+  console.log("Count changed:", state.count)
+})
+
+unsubscribe()
+----
+
+Use cases:
+
+* Logging
+* Sync with backend
+* LocalStorage manual save
+* Analytics
+
+---
+
+== Persistence Example
+
+[source,typescript]
+----
+export const useCounterStore = createStore<CounterState>(
+  (set) => ({
+    count: 0,
+    increment: () => set((s) => ({ count: s.count + 1 })),
+  }),
+  {
+    persist: { name: "counter-store" }
+  }
+)
+----
+
+Effect:
+
+* State is saved to localStorage
+* Survives page refresh
+* Key name: "counter-store"
+
+---
+
+== Devtools Example
+
+[source,typescript]
+----
+export const useCounterStore = createStore<CounterState>(
+  (set) => ({
+    count: 0,
+    increment: () => set((s) => ({ count: s.count + 1 })),
+  }),
+  {
+    devtools: true
+  }
+)
+----
+
+Effect:
+
+* Enables Redux DevTools extension
+* Shows state changes
+* Allows time-travel debugging
+
+Recommended:
+Enable automatically in development mode only.
+
+---
+
+== Advanced Example: Derived State
+
+[source,typescript]
+----
+type CartState = {
+  items: number[]
+  total: () => number
+}
+
+export const useCartStore = createStore<CartState>((set, get) => ({
+  items: [],
+
+  total: () => {
+    return get().items.reduce((a, b) => a + b, 0)
+  }
+}))
+----
+
+Usage:
+
+[source,tsx]
+----
+const total = useCartStore((s) => s.total())
+----
+
+---
+
+== Example: Using Store Outside React
+
+[source,typescript]
+----
+function logCurrentCount() {
+  const { count } = useCounterStore.get()
+  console.log(count)
+}
+----
+
+---
+
+== Architecture Notes
+
+* The state engine is fully abstracted.
+* Underlying implementation may change.
+* Public API remains stable.
+* No direct dependency on Zustand should be used by application code.
+
+---
+
+== Best Practices
+
+* Use selectors to avoid unnecessary re-renders.
+* Keep actions inside initializer.
+* Avoid direct mutation.
+* Use persistence only when required.
+* Avoid storing large objects in persisted state.
+
+---
+
+== Recommended Folder Structure
+
+----
+src/
+  stores/
+    counter.store.ts
+  components/
+    Counter.tsx
+----
+
+---
+
+== Summary
+
+`createStore` provides:
+
+* Reactive UI updates
+* Global state access
+* Optional persistence
+* Optional devtools
+* Engine abstraction
+* Long-term maintainability
+
+This is the official state management pattern for mfront applications.

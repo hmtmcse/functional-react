@@ -14,7 +14,7 @@
 | API calls, subscriptions, DOM sync
 | `useEffect(() => { fetchData() }, [])`
 
-| useContext
+| __useContext
 | Share state globally
 | Theme, auth, language
 | `const value = useContext(MyContext)`

@@ -1,5 +1,5 @@
 import {reactUseContext} from "@mfront/mfront-libs";
 
-export function useContext(context: any) {
+export function __useContext(context: any) {
     return reactUseContext(context)
 }

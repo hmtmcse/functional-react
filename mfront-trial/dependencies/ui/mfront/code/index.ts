@@ -8,13 +8,16 @@ import {ENV_NAME, getEnvValue} from "./data/mconfig"
 import {reactLazy as loadPage} from "@mfront/mfront-libs";
 import RoutePageData, {UIFunction} from "./router/route-page-data";
 import MRegistry from "./data/mregistry";
+import {createStore, MStore} from "./store/create-store";
+import { __useContext } from "./hooks/__use-context";
 
 
 export type {
     Layout,
     UIFunction,
     RoutePageData,
-    MRegistry
+    MRegistry,
+    MStore
 }
 
 export {
@@ -25,5 +28,7 @@ export {
     useRequest,
     loadPage,
     getEnvValue,
-    ENV_NAME
+    ENV_NAME,
+    createStore,
+    __useContext
 }

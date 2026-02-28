@@ -4,6 +4,7 @@
   "main": "code/index.ts",
   "types": "code/index.ts",
   "dependencies": {
-    "react-router-dom": "^7.13.0"
+    "react-router-dom": "^7.13.0",
+    "zustand": "^5.0.11"
   }
 }
