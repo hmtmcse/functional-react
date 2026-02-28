@@ -1,12 +1,12 @@
-import {MConfig} from "./../data/mconfig";
 import {MountRoute, ReactSuspense} from "@mfront/mfront-libs";
+import MRegistry from "../data/mregistry";
 
-export default function MFrontPageManager({config}: { config: MConfig }) {
+export default function MFrontPageManager({registry}: { registry: MRegistry }) {
     return (
         <>
             <h1>Page Manager</h1>
             <ReactSuspense fallback={<div>Loading page...</div>}>
-                <MountRoute router={config.routeConfig.getRouteMapping()}/>
+                <MountRoute router={registry.routeConfig.getRouteMapping()}/>
             </ReactSuspense>
         </>
     )

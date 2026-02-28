@@ -8,10 +8,11 @@ export default defineConfig(({mode}) => {
     const env = loadEnv(mode, envFolder, '') // third param '' allows all vars without VITE_ prefix
 
     // 2️⃣ Convert env to define globals
-    const defineEnv: Record<string, string> = {}
-    Object.keys(env).forEach((key) => {
-        defineEnv[key] = JSON.stringify(env[key])
-    })
+    const defineEnv = Object.fromEntries(
+        Object.entries(env)
+            .filter(([key]) => /^[A-Z0-9_]+$/.test(key))
+            .map(([key, value]) => [key, JSON.stringify(value)])
+    )
 
     return {
         base: '/',

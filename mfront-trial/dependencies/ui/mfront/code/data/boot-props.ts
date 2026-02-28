@@ -1,6 +1,6 @@
-import {MConfig} from "./mconfig";
+import MRegistry from "./mregistry";
 
 export interface BootProps {
     viewHolder: HTMLElement | null
-    config: MConfig
+    registry: MRegistry
 }

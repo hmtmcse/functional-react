@@ -1,5 +1,16 @@
-import RouteConfig from "../router/route-config";
+export const ENV_NAME = {
+    API_BASE_URL: "API_BASE_URL",
+    ASSETS_BASE_URL: "ASSETS_BASE_URL",
+}
+
+export function getEnvValue(key: string, fallback: string) {
+    if (typeof (globalThis as any)[key] !== 'undefined') {
+        return (globalThis as any)[key]
+    }
+    return fallback
+}
 
 export interface MConfig {
-    routeConfig: RouteConfig
+    apiBaseUrl?: string
+    assetsBaseUrl?: string
 }

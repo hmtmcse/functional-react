@@ -1,7 +1,7 @@
 import {MFront} from "mfront";
-import AppConfig from "./config/app-config.tsx";
+import AppRegistry from "./config/app-registry.tsx";
 
 MFront.boot({
     viewHolder: document.getElementById("root"),
-    config: new AppConfig()
+    registry: new AppRegistry()
 })
