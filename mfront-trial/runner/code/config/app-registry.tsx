@@ -1,17 +1,17 @@
-import {MuiConfig, RouteConfig, type MConfig, type MRegistry} from "mfront";
+import {RouteConfig, type MConfig, type MRegistry, MAdapter} from "mfront";
 import AppRouteConfig from "./app-route-config.tsx";
 import AppConfig from "./app-config.tsx";
-import AppUIConfig from "./app-ui-config.tsx";
+import AppAdapter from "./app-adapter.tsx";
 
 
 export default class AppRegistry implements MRegistry {
     routeConfig: RouteConfig;
     config: MConfig;
-    uiConfig: MuiConfig;
+    adapter: MAdapter;
 
     constructor() {
         this.routeConfig = new AppRouteConfig()
         this.config = new AppConfig()
-        this.uiConfig = new AppUIConfig()
+        this.adapter = new AppAdapter()
     }
 }

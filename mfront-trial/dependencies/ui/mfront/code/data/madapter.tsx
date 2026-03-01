@@ -1,6 +1,6 @@
 import {UINode} from "../router/route-page-data";
 
-export default abstract class MuiConfig {
+export default abstract class MAdapter {
 
     setCentralUI(): UINode {
         return (<></>)
@@ -10,11 +10,7 @@ export default abstract class MuiConfig {
         return (<div>Loading page...</div>)
     }
 
-    setUIImplementation() {
-
-    }
-
-    showToast(){
+    setUIAdapter() {
 
     }
 

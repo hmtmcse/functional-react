@@ -1,6 +1,8 @@
 import {reactComponentType, reactNode} from "@mfront/mfront-libs";
+
 export type UIFunction<P = any> = reactNode | reactComponentType<P>
 export type UINode = reactNode
+export type UIComponent<P> = reactComponentType<P>
 
 export default interface RoutePageData {
     url: string

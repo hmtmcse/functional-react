@@ -1,7 +1,7 @@
-import {useContext} from "mfront";
+import {useAppContext} from "mfront";
 
 export default function Page2() {
-    const config = useContext((state) => state.config);
+    const config = useAppContext((state) => state.config);
     return (
         <>
             {config.apiBaseUrl}

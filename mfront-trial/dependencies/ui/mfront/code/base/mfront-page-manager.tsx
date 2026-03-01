@@ -5,10 +5,10 @@ export default function MFrontPageManager({registry}: { registry: MRegistry }) {
     return (
         <>
             <h1>Page Manager</h1>
-            <ReactSuspense fallback={registry.uiConfig.setSuspense()}>
+            <ReactSuspense fallback={registry.adapter.setSuspense()}>
                 <MountRoute router={registry.routeConfig.getRouteMapping()}/>
             </ReactSuspense>
-            {registry.uiConfig.setCentralUI()}
+            {registry.adapter.setCentralUI()}
         </>
     )
 }

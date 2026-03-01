@@ -7,7 +7,7 @@ type ContextDefinition = {
     setConfig: (newConfig: Partial<MConfig>) => void;
 };
 
-export const useContext = createStore<ContextDefinition>((set) => ({
+export const useAppContext = createStore<ContextDefinition>((set) => ({
     config: new MConfigDefault(),
     setConfig: (newConfig) => set((state: any) => ({
             config: {...state.config, ...newConfig}
