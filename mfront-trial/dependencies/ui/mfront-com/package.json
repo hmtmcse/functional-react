@@ -1,5 +1,5 @@
 {
-  "name": "@mfront/core",
+  "name": "@mfront/com",
   "version": "0.0.1",
   "main": "code/index.ts",
   "types": "code/index.ts"
