@@ -13,6 +13,7 @@ export const reactUseLayoutEffect = React.useLayoutEffect
 
 // Core
 export const reactCreateElement = React.createElement
+export const reactCreateContext = React.createContext
 export const reactFragment = React.Fragment
 export const ReactSuspense = React.Suspense
 export const reactCreateRoot = ReactDOM.createRoot
