@@ -20,6 +20,8 @@
 * form
 ** fieldDefinition
 ** inputField
+** validation
+** field store data should not store in state
 * middleware
 
 
@@ -39,3 +41,20 @@
 ** InputFiled
 ** Select
 ** Label
+
+
+== defaultProps
+```ts
+export default function Button({
+  label,
+  onClick,
+  variant = "primary",
+  disabled = false,
+}: ButtonProps) {
+  return (
+    <button onClick={onClick} disabled={disabled} className={`btn-${variant}`}>
+      {label}
+    </button>
+  )
+}
+```
