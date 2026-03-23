@@ -10,15 +10,16 @@ interface InputFieldProps {
 }
 
 export function InputField({
-    name,
-    type = "text",
-    placeholder,
-    defaultValue,
-    formStore
-}: InputFieldProps) {
+                               name,
+                               type = "text",
+                               placeholder,
+                               defaultValue,
+                               formStore
+                           }: InputFieldProps) {
 
     const inputRef = useRef<HTMLInputElement>(null)
     useEffect(() => {
+        console.log(defaultValue)
         if (defaultValue !== undefined && inputRef.current) {
             inputRef.current.value = defaultValue
             formStore.set(name, defaultValue)
@@ -30,20 +31,22 @@ export function InputField({
     }
 
     return (
-        <input
-            ref={inputRef}
-            name={name}
-            type={type}
-            placeholder={placeholder}
-            defaultValue={defaultValue}
-            onChange={handleChange}
-        />
+        <>
+            <input
+                ref={inputRef}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                onChange={handleChange}
+            />
+        </>
     )
 }
 
 export default function FormPage() {
     const formStore = useRef(new Map()).current
     const [defaultData, setDefaultData] = useState<any>(null)
+    const [version, setVersion] = useState(0)
 
     const mockApiCall = () => {
         return new Promise((resolve) => {
@@ -58,11 +61,14 @@ export default function FormPage() {
     };
 
     const loadData = async () => {
+        formStore.clear()
         const data: any = await mockApiCall()
+        console.log(data)
         Object.entries(data).forEach(([k, v]) => {
             formStore.set(k, v)
         })
         setDefaultData(data)
+        setVersion(v => v + 1)
     }
 
     const handleSubmit = async (e: any) => {
@@ -76,6 +82,7 @@ export default function FormPage() {
 
     return (
         <>
+            {console.log(formStore)}
             <button onClick={loadData}>
                 Load Mock Data
             </button>
@@ -83,6 +90,7 @@ export default function FormPage() {
             <form onSubmit={handleSubmit}>
                 <br/>
                 <InputField
+                    key={`name-${version}`}
                     name="name"
                     placeholder="Name"
                     defaultValue={defaultData?.name}
@@ -91,6 +99,7 @@ export default function FormPage() {
 
                 <br/><br/>
                 <InputField
+                    key={`email-${version}`}
                     name="email"
                     type="email"
                     placeholder="Email"
@@ -100,6 +109,7 @@ export default function FormPage() {
 
                 <br/><br/>
                 <InputField
+                    key={`phone-${version}`}
                     name="phone"
                     placeholder="Phone"
                     defaultValue={defaultData?.phone}
