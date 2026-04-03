@@ -13,6 +13,11 @@ packages:
   - 'packages/*'
 ```
 
+== Add repositories by .npmrc
+```bash
+registry=http://localhost:4873/
+```
+
 
 ```bash
 pnpm release:alpha   # alpha preview
