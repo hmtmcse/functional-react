@@ -6,9 +6,7 @@ export default defineConfig({
     entry: ['src/index.ts'],
     outDir: 'dist',
     deps: {
-        alwaysBundle: [
-            "zustand"
-        ],
+        alwaysBundle: [],
         neverBundle: [],
     },
 })
