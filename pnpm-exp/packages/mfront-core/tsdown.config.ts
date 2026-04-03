@@ -5,10 +5,5 @@ export default defineConfig({
     ...baseConfig,
     entry: ['src/index.ts'],
     outDir: 'dist',
-    deps: {
-        alwaysBundle: [
-            "react-router-dom"
-        ],
-        neverBundle: [],
-    },
+
 })
