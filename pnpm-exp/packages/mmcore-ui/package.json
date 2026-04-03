@@ -1,13 +1,13 @@
 {
   "name": "mmcore-ui",
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2-alpha.3",
   "description": "Common Library for mFront and mapend",
   "license": "Apache-2.0",
   "main": "src/index.ts",
   "module": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
     "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
     "version:release": "pnpm version patch --no-git-tag-version",

@@ -1,9 +1,9 @@
 {
   "name": "mfront-ui",
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2-alpha.3",
   "description": "mFront UI Specifier",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
     "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
     "version:release": "pnpm version patch --no-git-tag-version",

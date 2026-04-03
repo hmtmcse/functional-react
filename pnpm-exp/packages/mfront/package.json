@@ -1,13 +1,13 @@
 {
   "name": "mfront",
-  "version": "0.0.2-alpha.4",
+  "version": "0.0.2-alpha.5",
   "description": "Maintainable Front End Framework - mfront",
   "license": "Apache-2.0",
   "main": "src/index.ts",
   "module": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
     "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
     "version:release": "pnpm version patch --no-git-tag-version",
@@ -49,14 +49,15 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "exports": {
       ".": {
-        "import": "./dist/index.js",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs",
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.mjs"
       }
     }
   },

@@ -1,9 +1,9 @@
 {
   "name": "mfront-core",
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2-alpha.3",
   "description": "mFront all core shared logic and services",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
     "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
     "version:release": "pnpm version patch --no-git-tag-version",
