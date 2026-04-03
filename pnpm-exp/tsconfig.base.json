@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "paths": {
+      "mfront": [
+        "packages/mfront"
+      ],
+      "mmcore": [
+        "packages/mmcore"
+      ],
+      "mmcore-ui": [
+        "packages/mmcore-ui"
+      ],
+      "mfront-core": [
+        "packages/mfront-core"
+      ],
+      "mfront-ui": [
+        "packages/mfront-ui"
+      ],
+      "mfront-default-ui": [
+        "packages/mfront-default-ui"
+      ],
+      "mfront-cli": [
+        "packages/mfront-cli"
+      ]
+    }
+  }
+}

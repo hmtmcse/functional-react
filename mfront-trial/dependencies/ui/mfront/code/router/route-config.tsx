@@ -2,6 +2,7 @@ import RoutePageData from "./route-page-data";
 import RouteData from "./route-data";
 import {Layout} from "./../data/mtypes";
 import {createReactRoute} from "@mfront/mfront-libs";
+import {RouteErrorPage, RouteNotFoundPage} from "@mfront/mfront/code/router/route-common";
 
 const RouteConfigName = {
     privateLayout: "private",
@@ -27,6 +28,14 @@ function getMappingForReactRouter(routers: Map<string, RouteData>) {
             mappings.push(routeMap)
         }
     })
+    mappings.push(
+        {
+            errorElement: <RouteErrorPage/>,
+            children: [
+                {path: "*", element: <RouteNotFoundPage/>},
+            ]
+        }
+    )
     return createReactRoute(mappings)
 }
 

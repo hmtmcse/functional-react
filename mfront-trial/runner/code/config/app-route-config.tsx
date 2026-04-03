@@ -3,6 +3,7 @@ import PublicLayout from "../layout/public-layout.tsx";
 import DefaultLayout from "../layout/default-layout.tsx";
 import PrivateLayout from "../layout/private-layout.tsx";
 import ExampleUFR from "../feature/example/example-ufr.tsx";
+import AuthUFR from "../feature/auth/auth-ufr.tsx";
 
 
 export default class AppRouteConfig extends RouteConfig {
@@ -20,5 +21,6 @@ export default class AppRouteConfig extends RouteConfig {
 
     registerRoute(routerConfig: RouteConfig): void {
         ExampleUFR.registerRoute(routerConfig)
+        AuthUFR.registerRoute(routerConfig)
     }
 }
