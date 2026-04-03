@@ -1,6 +1,6 @@
 {
   "name": "mmcore",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.2-alpha.2",
   "description": "Common Library for mFront and mapend",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -15,8 +15,7 @@
     "release": "pnpm run build && pnpm run version:release && pnpm run publish:release"
   },
   "dependencies": {
-    "zustand": "^5.0.11",
-    "react": "^19.2.4"
+    "zustand": "^5.0.11"
   },
   "license": "Apache-2.0",
   "main": "src/index.ts",
@@ -33,9 +32,6 @@
   "homepage": "https://github.com/banglafighter/mmcore#readme",
   "bugs": {
     "url": "https://github.com/banglafighter/mmcore/issues"
-  },
-  "devDependencies": {
-    "@types/react": "^19.2.14"
   },
   "packageManager": "pnpm@10.28.2",
   "exports": {
