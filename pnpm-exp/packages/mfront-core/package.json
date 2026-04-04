@@ -1,6 +1,6 @@
 {
   "name": "mfront-core",
-  "version": "0.0.2-alpha.11",
+  "version": "0.0.2-alpha.13",
   "description": "mFront all core shared logic and services",
   "scripts": {
     "build": "tsdown",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "mmcore": "workspace:*",
-    "react-router-dom": "^7.13.0"
+    "react-router": "^7.14.0"
   },
   "peerDependencies": {
     "react-dom": "^19.2.4"

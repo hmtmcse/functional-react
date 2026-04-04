@@ -10,7 +10,7 @@ import {
     redirect,
     useSearchParams,
     useMatches,
-} from "react-router-dom"
+} from "react-router"
 
 export const McRouterOutlet = Outlet
 export const mcRouterUseSearchParams = useSearchParams

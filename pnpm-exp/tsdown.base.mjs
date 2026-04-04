@@ -7,15 +7,5 @@ export const baseConfig = defineConfig({
     sourcemap: true,
     minify: true,
     target: 'es2020',
-    platform: 'browser',
-    deps: {
-        neverBundle: [
-            'react',
-            'react-dom',
-            'react/jsx-runtime',
-            'scheduler',
-            'prop-types'
-        ],
-        skipNodeModulesBundle: false,
-    }
+    platform: 'browser'
 })
