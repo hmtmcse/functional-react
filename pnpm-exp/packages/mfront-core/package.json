@@ -1,6 +1,6 @@
 {
   "name": "mfront-core",
-  "version": "0.0.2-alpha.13",
+  "version": "0.0.2-alpha.16",
   "description": "mFront all core shared logic and services",
   "scripts": {
     "build": "tsdown",

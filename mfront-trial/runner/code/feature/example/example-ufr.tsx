@@ -7,6 +7,7 @@ const page3 = loadPage(() => import("./page3"))
 const formPage = loadPage(() => import("./form-page.tsx"))
 const form2Page = loadPage(() => import("./form2-page.tsx"))
 const cleanFormPage = loadPage(() => import("./clean-form-page.tsx"))
+const form3Page = loadPage(() => import("./form3-page"))
 
 const UI_BASE_URL = "/example"
 const API_BASE_URL = "api/v1/package-disburse-log/"
@@ -21,6 +22,7 @@ export default class ExampleUFR {
         page3: UI_BASE_URL + "/page3",
         formPage: UI_BASE_URL + "/form-page",
         form2Page: UI_BASE_URL + "/form2-page",
+        form3Page: UI_BASE_URL + "/form3-page",
         cleanFormPage: UI_BASE_URL + "/clean-form-page",
     }
 
@@ -30,6 +32,7 @@ export default class ExampleUFR {
         routerConfig.addPublicRoute({url: this.ui.page3, content: page3})
         routerConfig.addPublicRoute({url: this.ui.formPage, content: formPage})
         routerConfig.addPublicRoute({url: this.ui.form2Page, content: form2Page})
+        routerConfig.addPublicRoute({url: this.ui.form3Page, content: form3Page})
         routerConfig.addPublicRoute({url: this.ui.cleanFormPage, content: cleanFormPage})
     }
 }

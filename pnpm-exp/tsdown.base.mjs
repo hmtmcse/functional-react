@@ -7,5 +7,11 @@ export const baseConfig = defineConfig({
     sourcemap: true,
     minify: true,
     target: 'es2020',
-    platform: 'browser'
+    platform: 'neutral',
+    output: {
+        extension: {
+            esm: '.mjs',
+            cjs: '.cjs'
+        }
+    },
 })

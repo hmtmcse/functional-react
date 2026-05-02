@@ -1,6 +1,6 @@
 {
   "name": "mmcore",
-  "version": "0.0.2-alpha.13",
+  "version": "0.0.2-alpha.16",
   "description": "Common Library for mFront and mapend",
   "scripts": {
     "build": "tsdown",
